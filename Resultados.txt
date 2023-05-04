@@ -1,0 +1,1 @@
+El promedio de las altura de las personas es: 1.6784 y la desviación estándar es:0.4974
