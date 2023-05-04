@@ -113,12 +113,12 @@ while True:
 	print('\t-----------------------------------------------')
 	res = distancia()
 	clear()
-	print(f'\tLa menor distancia es:\t{res[0]}\n\tLa coordenada correspondiente es la numero: {res[1]} [{listaCoordenadas[res[1]]}]')
+	print(f'\tLa menor distancia es:\t{"{:.3f}".format(res[0])}\n\tLa coordenada correspondiente es la numero: {res[1]} [{listaCoordenadas[res[1]]}]')
 	print(f'\tLista de distancias y sus puntos.\n\t Punto:[{principal}]')
 	puntos		= ''
 	distancias	= ''
 	for p in listaCoordenadas:	puntos		+= '\t'+ str(p)
-	for d in listaDistancias:	distancias	+= '\t'+ str(d)
+	for d in listaDistancias:	distancias	+= '\t'+ str("{:.3f}".format(d))
 	print(f'\t{puntos}')
 	print(f'\t{distancias}')
 	if input('\tPresione enter para salir o [c / C] para usar el\n\tprograma de nuevo\n\t> ').lower() != 'c':
