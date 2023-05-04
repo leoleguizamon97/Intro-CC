@@ -1,4 +1,5 @@
 import numpy
+import os
 
 #Variables
 listaCoordenadas=[]
@@ -6,6 +7,12 @@ listaDistancias=[]
 principal = ''
 
 #Funciones
+def clear():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+
 def validarDecimal(val):
 	try:
 		x = float(val)
@@ -15,10 +22,11 @@ def validarDecimal(val):
 
 def ingresoDatos():
 	#Recoge la lista de coordenadas
-	error = False
+	
 	while True:
+		clear()
 		cadena = input('Ingrese una lista de coordenadas.\nCada una separada por espacios ( ) y comas (,) para separar los valores\nPor ejemplo: "1,1 1.5,2.65 2,6"\n> ')
-		
+		error = False
 		if len(cadena.split()) <= 1:
 			print('Ingrese mas de una coordenada. Intente nuevamente')
 		else:
@@ -26,14 +34,11 @@ def ingresoDatos():
 				#Valida el formato
 				if ',' in a:
 					x,y = a.split(',')
-					if (not validarDecimal(x)) and (not validarDecimal(y)): error=True
+					if (not validarDecimal(x)) or (not validarDecimal(y)):
+						print(f'Cadena de coordenadas no valida. Intente nuevamente [No es un numero:{a}]')
 				else:
-					error = True
-			
-			if not error:
-				listaCoordenadas = cadena.split()
-				print(listaCoordenadas)
-				break
-			else: print(f'Cadena de coordenadas no valida. Intente nuevamente [Error en:{a}]')
+					print(f'Cadena de coordenadas no valida. Intente nuevamente [No cumple con el formato:{a}]')
+		input()
+
 #Main
 ingresoDatos()

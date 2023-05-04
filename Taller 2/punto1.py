@@ -1,4 +1,5 @@
 import numpy
+import os
 
 #Variables
 coordenadas = []
@@ -7,6 +8,12 @@ coordenadas = []
 dis = lambda a,b,c,d : numpy.sqrt((a-c)**2 + (b-d)**2)
 
 #Funciones
+def clear():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+
 def validarDecimal(val):
 	try:
 		x = float(val)
@@ -15,6 +22,8 @@ def validarDecimal(val):
 	return True
 
 def ingresoDatos():
+	clear()
+	print('Ingrese las cordenadas separadas por un espacio, use puntos para las cifras decimales:\n Ejemplo: [x,y] = 1.5 2.5\n')
 	contador = 1
 	while True:
 		cadena = input(f'Ingrese la cordenada numero {contador}: \t')
@@ -32,6 +41,8 @@ def ingresoDatos():
 				if contador > 2:
 					agregar = input('¿Desea agregar mas coordenadas? [n: para no agregar mas] [Enter para continuar]: ')
 					if agregar.lower() == 'n':
+						clear()
+						input(f'Las coodenadas ingresadas fueron: {coordenadas}')
 						break
 			else:
 				print('El valor ingresado no es un numero. Intente nuevamente.')
@@ -65,20 +76,22 @@ def distancia():
 	return puntos
 
 #Main
+clear()#Informamos funcion del programa
+print('█===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O█\n')
+print('Este programa determinará cual es el segmento mas largo de un camino polinomial')
+print('teniendo en cuenta unicamente los puntos contiguos en el trayecto\n')
+input('█===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O█')
 while True:
-	#Informamos funcion del programa
-	print('█===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O█\n')
-	print('Este programa determinará cual es el segmento mas largo de un camino polinomial')
-	print('teniendo en cuenta unicamente los puntos contiguos en el trayecto\n')
-	print('█===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O█\n')
     #Obtenemos las cordenadas, solicitamos un formato
-	print('Ingrese las cordenadas separadas por un espacio, use puntos para las cifras decimales:\n Ejemplo: [x,y] = 1.5 2.5\n')
 	ingresoDatos()
 	#Calcular distancias
 	res = distancia()
+	clear()
 	print(f'La distancia maxima es: ')
 	print(f'{res[0]}\nEntre los puntos #{res[1]+1} [{coordenadas[res[1]]}] y #{res[2]+1} [{coordenadas[res[2]]}]')
 	agregar = input('¿Desea Salir? [s: Para salir] [Enter para ingresar mas caminos]: ')
-	if agregar.lower() == 's': break
+	if agregar.lower() == 's':
+		clear()
+		break
 	coordenadas.clear()
 	
