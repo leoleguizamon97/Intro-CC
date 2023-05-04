@@ -1,0 +1,1 @@
+Las rectas {a}x+{b}y={c} y {d}x+{e}y={f} no se cortan y por lo tanto son paralelas.

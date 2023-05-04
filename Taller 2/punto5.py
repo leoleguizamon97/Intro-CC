@@ -2,10 +2,10 @@ def corte(m1, b1, m2, b2):
     if (m1 - m2) == 0: return [False,0,0]
     x = (b2 - b1) / (m1 - m2)
     y = m1*x + b1
-    return [True,x,y]
+    return [True,x,-y]
 
 rectas		= open('Rectas.txt','+r')
-resultado	= open('Resultados.txt','w+')
+respuesta	= open('Resultados.txt','w+')
 
 numeros = rectas.readlines()
 lineas = []
@@ -32,5 +32,7 @@ print(resultado)
 
 if resultado[0]:
     print(f'Las rectas {a}x+{b}y={c} y {d}x+{e}y={f} se cortan en el punto ({"{:.4f}".format(resultado[1])},{"{:.4f}".format(resultado[2])}).')
+    respuesta.write(f'Las rectas {a}x+{b}y={c} y {d}x+{e}y={f} se cortan en el punto ({"{:.4f}".format(resultado[1])},{"{:.4f}".format(resultado[2])}).')
 else:
     print('Las rectas {a}x+{b}y={c} y {d}x+{e}y={f} no se cortan y por lo tanto son paralelas.')
+    respuesta.write('Las rectas {a}x+{b}y={c} y {d}x+{e}y={f} no se cortan y por lo tanto son paralelas.')
