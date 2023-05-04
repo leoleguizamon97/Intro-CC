@@ -3,6 +3,9 @@ import numpy
 #Variables
 coordenadas = []
 
+#Funcion lambda solicitada
+dis = lambda a,b,c,d : numpy.sqrt((a-c)**2 + (b-d)**2)
+
 #Funciones
 def validarDecimal(val):
 	try:
@@ -39,8 +42,6 @@ def distancia():
 	maxDis=0
 	#0= distancia 1=id punto1 2=id punto2
 	puntos=[maxDis,-1,-1]
-	#Funcion lambda solicitada
-	dis = lambda a,b,c,d : numpy.sqrt((a-c)**2 + (b-d)**2)
 	for i in range(len(coordenadas)-1):
 		punto1 = coordenadas[i]
 		punto2 = coordenadas[i+1]
@@ -63,7 +64,7 @@ def distancia():
 	
 	return puntos
 
-#main
+#Main
 while True:
 	#Informamos funcion del programa
 	print('█===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O===O█\n')
