@@ -17,8 +17,8 @@ def desvEstandar(lista,pr=0):
     resultado = suma/n
     return numpy.sqrt(resultado)
 
-medidas		= open('./Alturas.txt','+r')
-resultado	= open('./Resultados.txt','w+')
+medidas		= open('Alturas.txt','+r')
+resultado	= open('Resultados.txt','w+')
 personas	= medidas.readlines()
 alturas		= []
 
