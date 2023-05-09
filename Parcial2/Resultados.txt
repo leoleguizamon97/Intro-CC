@@ -1,0 +1,1 @@
+Las rectas 1.0x+2.0y=3.0 y 4.0x+6.0y=7.0 se cortan en el punto (-2.0000,2.5000).
