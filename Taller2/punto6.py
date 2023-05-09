@@ -28,3 +28,4 @@ for a in conjuntos:
     interseccion = interseccion & a
 
 print(f"Union {sorted(union)}, Interseccion {sorted(interseccion)}")
+archivo.write(f'La unión de los conjuntos es {union} y la intersección es {interseccion}')

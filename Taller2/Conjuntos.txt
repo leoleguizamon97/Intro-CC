@@ -1,0 +1,3 @@
+1 2 3 4
+3 4 5 6
+La unión de los conjuntos es {'1', '2', '4', '3', '6', '5'} y la intersección es {'4', '3'}
