@@ -22,8 +22,6 @@ for i in range(numConjuntos):
 union = conjuntos[0]
 interseccion = conjuntos[0]
 
-print(union)
-
 for a in conjuntos:
     union = union | a
     interseccion = interseccion & a
